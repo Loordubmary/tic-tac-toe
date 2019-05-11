@@ -11,7 +11,7 @@ This is help to know how to make a game steps as an algorithm and how to convert
 
 # Algorithm
 
-Before implement the algorithm, we know about how to play the game and what are the roles are there.
+Before implementing the algorithm, we know about how to play the game and what are the roles are there.
 
 ## Outline of the game
 
@@ -25,24 +25,24 @@ Before implement the algorithm, we know about how to play the game and what are 
  -----------------
 ```
 
-The above is a play ground of the game. The game platform divided into '9' tiles. The '+' is denoted to the tiles is now empty or ready to fill.
+The above is a playground of the game. The game platform divided into '9' tiles. The '+' is denoted to the tiles is now empty or ready to fill.
 
-The game structure is follows,
+The game structure is as follows,
 
 1. This is Two player game.
-2. The player's chances is 5:4. First player have one more filling option when compared to the secound player.
-3. The player keys are 'O' and 'X'. [If you set any other play key's insteed of 'O' and 'X']
+2. The player's chances is 5:4. First player has one more filling option when compared to the second player.
+3. The player keys are 'O' and 'X'. [If you set any other play key's instead of 'O' and 'X']
 
-The game rule is follows,
+The game rule is as follows,
 
 1. The first user put 'O' symbol in any of one tiles of the game.
-2. The secound user put 'X' symbol in any other tiles of the game. 
+2. The second user put 'X' symbol in any other tiles of the game. 
 3. The condition is the player should not replace the keys and they should not rewrite the key if the tiles is already filed.
-4. The game contain only '9' option to filling the game tiles.
-5. WIN: which player is first fill one row using their key like 'O' or 'X'(vertically, herzontaly or dinagoly), who is a winer of the game.
-6. WINNING CHOICE: The game totaly have a '8' chance to win the game.
+4. The game contains only '9' option to filling the game tiles.
+5. WIN: which player is first fill one row using their key like 'O' or 'X'(vertically, horizontally or diagonally), who is the winner of the game.
+6. WINNING CHOICE: The game totally have a '8' chance to win the game.
 
-The demo of game play is follows,
+The demo of game play is as follows,
 
 ### Demo - 1:
 
@@ -110,6 +110,6 @@ In demo-1 the game is won by player 1. Because the player fill all tiles in the 
  	Player 1
 ```
 
-In demo-2 the game is draw. Because no one fill the row with unique play key.
+In demo-2 the game is a draw. Because no one fill the row with unique play key.
 
 # Implement via Jquery
