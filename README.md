@@ -5,7 +5,7 @@ This is help to know how to make a game steps as an algorithm and how to convert
 # Index
 
 1. Algorithm of Tic Tac Toe
-2. Implement via Jquery
+2. Implementation via Jquery
 
 # Algorithm
 
@@ -125,4 +125,5 @@ In demo-2 the game is a draw. Because no one fill the row with unique play key.
 5. If the count > 9 or count = 10, the success ratio is not `true`. To print `the game is draw`.
 6. Stop the game
 
-# Implement via Jquery
+# Implementation via Jquery
+
