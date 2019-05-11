@@ -127,3 +127,131 @@ In demo-2 the game is a draw. Because no one fill the row with unique play key.
 
 # Implementation via Jquery
 
+Add the below code in your html,
+
+```
+<table id="game-platform">
+	<tr  class="game-row">
+		<td class="game-row-button" colspan="3"><p>Match</p><p id="game-result"></p></td>
+	</tr>
+	<tr class="game-row">
+		<td class="game-row-td row-num-1">+</td>
+		<td class="game-row-td row-num-2">+</td>
+		<td class="game-row-td row-num-3">+</td>
+	</tr>
+	<tr class="game-row">
+		<td class="game-row-td row-num-4">+</td>
+		<td class="game-row-td row-num-5">+</td>
+		<td class="game-row-td row-num-6">+</td>
+	</tr>
+	<tr class="game-row">
+		<td class="game-row-td row-num-7">+</td>
+		<td class="game-row-td row-num-8">+</td>
+		<td class="game-row-td row-num-9">+</td>
+	</tr>
+	<tr class="game-row">
+		<td class="game-row-button" colspan="3"><button class="game-restart">RESTART</button></td>
+	</tr>
+</table>
+
+```
+
+This code is help to create user view of the game. 
+
+If you can add below css code for neet view of game play ground.
+
+```
+body {
+	background-color: #f3f1f0;
+}
+#game-platform {
+	position:fixed;
+	top: 50%;
+	left: 50%;
+	width:30em;
+	height:18em;
+	margin-top: -10em;
+	margin-left: -25em;
+	background-color: #f3f3f3;
+}
+.game-row-td {
+	border: 1px solid #c0c0c0;
+	text-align: center;
+}
+.game-row-button {
+	border: 1px solid #c0c0c0;
+	text-align: center;
+}
+```
+
+The below code is to add your script function. This is the heart of your program.
+
+```
+var first = 'O';
+var second = 'X';
+var count = 1;
+var values = [];
+var win = '';
+$(document).ready(function(){
+	$('.game-restart').click(function(){
+		$('.game-row-td').text('+');
+		count = 1;
+		win = '';
+		$('#game-result').html('');
+	});
+	$('.game-row-td').click(function(){
+		if($(this).text() == '+' && count < 10 && win == '') {
+			$('#game-result').html('');
+			if(count%2 != 0) {
+				$(this).text(first);
+				if(count >= 5 && win == '') {
+					checkSuccessRatio();
+				}
+				count = count + 1;
+			} else {
+				$(this).text(second);
+				if(count >= 5 && win == '') {
+					checkSuccessRatio();
+				}
+				count = count + 1;
+			}
+		} else {
+			if(count < 10 && win == '') {
+				$('#game-result').html('This tiles are already filed');
+			} else {
+				$('#game-result').html('Please restart a game. This Game is Over');
+			}
+		}
+	});
+
+	function checkSuccessRatio() {
+		$.each(new Array(9), function(n){
+		    values[(n+1)] = $('.row-num-'+(n+1)).text();
+		});
+
+		if(values[1] == values[2] && values[2] == values[3]) {
+			if(values[1] != '+') { win = values[1];	}
+		} else if(values[4] == values[5] && values[5] == values[6]) {
+			if(values[4] != '+') { win = values[4];	}
+		} else if(values[7] == values[8] && values[8] == values[9]) {
+			if(values[7] != '+') { win = values[7];	}
+		} else if(values[1] == values[4] && values[4] == values[7]) {
+			if(values[1] != '+') { win = values[1];	}
+		} else if(values[2] == values[5] && values[5] == values[8]) {
+			if(values[2] != '+') { win = values[2];	}
+		} else if(values[3] == values[6] && values[6] == values[9]) {
+			if(values[3] != '+') { win = values[3];	}
+		} else if(values[1] == values[5] && values[5] == values[9]) {
+			if(values[1] != '+') { win = values[1];	}
+		} else if(values[3] == values[5] && values[5] == values[7]) {
+			if(values[3] != '+') { win = values[3];	}
+		}
+
+		if(win != '') {
+			$('#game-result').html('The game won By '+ win);
+		} else if(count == 9) {
+			$('#game-result').html('The game is Draw');
+		}
+	}
+});
+```
