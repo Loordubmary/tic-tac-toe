@@ -9,8 +9,6 @@ This is help to know how to make a game steps as an algorithm and how to convert
 
 # Algorithm
 
-# Algorithm
-
 Before implementing the algorithm, we know about how to play the game and what are the roles are there.
 
 ## Outline of the game
