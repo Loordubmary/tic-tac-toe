@@ -158,7 +158,7 @@ Add the below code in your html,
 
 This code is help to create user view of the game. 
 
-If you can add below css code for neet view of game play ground.
+If you can add below css code for neet view of game playground.
 
 ```
 body {
