@@ -255,3 +255,7 @@ $(document).ready(function(){
 	}
 });
 ```
+
+***@BEGINNERS I hope this is help to you how to implement simple game application using javascript. 
+
+***Thank you for your support :+1:.
