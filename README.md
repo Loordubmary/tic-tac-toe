@@ -110,4 +110,19 @@ In demo-1 the game is won by player 1. Because the player fill all tiles in the 
 
 In demo-2 the game is a draw. Because no one fill the row with unique play key.
 
+## Algorithm
+
+1. Initialize first='O', second = 'X', win = '', count = 1
+2. Set all tiles value = '+'
+3. If the player click the tiles,
+	- To check the current tiles is empty or not and win == '' and count < 10 (Total tiles is 9, if you can use `count <= 9` instead)
+		- if the tiles is empty put the player play key. (if the turn is `first` put 'O' else put 'X')
+			- if the count >= 5,
+				- check success ratio. Because the count is less than 5, the possible of winning ratio is 0. So we calculate winning ratio after '5'.
+					- The success ratio is `true` to print who are winner of the game.
+		- if the tiles is not empty, show error message.
+4. The step 3 process continues until the count > 9 or count = 10.
+5. If the count > 9 or count = 10, the success ratio is not `true`. To print `the game is draw`.
+6. Stop the game
+
 # Implement via Jquery
