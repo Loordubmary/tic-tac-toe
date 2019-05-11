@@ -1,6 +1,6 @@
 # Simple Tic Tac Toe Game using JQuery
 
-This is help to know how to make a game steps as a algorithm and how to convert the algorithm in real time application.
+This is help to know how to make a game steps as an algorithm and how to convert the algorithm in real time application.
 
 # Index
 
